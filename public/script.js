@@ -25,6 +25,7 @@ con.connect(function(err) {
   con.query(sql, function (err, result) {
     if (err) throw err;
     msg.innerHTML = "Bruker er laget";
+      console.log("Dette funker");
   });
 });
 });
