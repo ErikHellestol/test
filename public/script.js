@@ -9,22 +9,22 @@ var con = mysql.createConnection({
   database: "d34eo2gvf0u1tf"
 });
 
-var usernameT = document.getElementById('username');
-var passwordT = document.getElementById('password');
-var nameT = document.getElementById('name');
-var btnT = document.getElementById('btn');
-var msgT = document.getElementById('msg');
+var username = document.getElementById('username');
+var password = document.getElementById('password');
+var name = document.getElementById('name');
+var btn = document.getElementById('btn');
+var msg = document.getElementById('msg');
 
-btnT.addEventListener("click", function() {
+btn.addEventListener("click", function() {
 	
 con.connect(function(err) {
   if (err) throw err;
-  msgT.innerHTML = "Det har skjedd noe feil :'(";
+  msg.innerHTML = "Det har skjedd noe feil :'(";
   //Insert a record in the "customers" table:
-  var sql = "INSERT INTO accounts (username, password, name) VALUES (" + usernameT.value + ", " + passwordT.value + ", " + nameT.value + ")";
+  var sql = "INSERT INTO accounts (username, password, name) VALUES (" + username.value + ", " + password.value + ", " + name.value + ")";
   con.query(sql, function (err, result) {
     if (err) throw err;
-    msgT.innerHTML = "Bruker er laget";
+    msg.innerHTML = "Bruker er laget";
       console.log("Dette funker");
   });
 });
