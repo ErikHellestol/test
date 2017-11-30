@@ -1,9 +1,9 @@
 const express = require('express');
-const app = express();
+const app = express();/*
 var ejs = require('ejs');
 var pg = require('pg');
 var bodyParser = require('body-parser');
-
+*/
 
 app.use(express.static("./public"));
 app.listen(process.env.PORT || 8080, function () { // do something with the port
