@@ -1,19 +1,18 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "asd",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ErikHellestol/test.git"
+    "url": "node_exercise_2"
   },
-  "author": "Erik Hellestol",
+  "author": "Jørgen Bordal Andersen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ErikHellestol/test/issues"
-  },
-  "homepage": "https://github.com/ErikHellestol/test#readme"
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
