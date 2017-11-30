@@ -19,7 +19,7 @@ btn.addEventListener("click", function() {
 	
 con.connect(function(err) {
   if (err) throw err;
-  msg.innerHTML = "Det har skjedd noe feil :'("
+  msg.innerHTML = "Det har skjedd noe feil :'(";
   //Insert a record in the "customers" table:
   var sql = "INSERT INTO accounts (username, password, name) VALUES ("username.value", "password.value", "name.value")";
   con.query(sql, function (err, result) {
