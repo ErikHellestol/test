@@ -1,41 +1,18 @@
-# HvaSomHelst
+# Complete Guide to Node Authentication
 
-LINK TIL HEROKU-APP: https://hvasomhelst.herokuapp.com/
+Code for the entire scotch.io tutorial series: Complete Guide to Node Authentication
 
-Team Members:
-Jørgen Bordal Andersen
-https://github.com/Jorgba15
+We will be using Passport to authenticate users locally, with Facebook, Twitter, and Google.
 
-Erik Hellestøl
-https://github.com/erikhellestol
+## Instructions
 
-Saba Haile
-https://github.com/Saha13
+If you would like to download the code and try it for yourself:
 
-PG account:
-https://github.com/HvaSomHelst
+1. Clone the repo: `git clone git@github.com:scotch-io/node-authentication-guide`
+2. Install packages: `npm install`
+3. Change out the database configuration in config/database.js
+4. Launch: `node server.js`
+5. Visit in your browser at: `http://localhost:8080`
 
-Roadmap: 
-https://hvasomhelst.storiesonboard.com/m/hvasomhelst
 
-Backlog/Project Board:
-https://trello.com/b/wPJceq2j/to-do-list-backlog
-(We as a group has 9 SP)
 
-Github Link:
-https://github.com/hvasomhelst/hvasomhelst
-
-Product Details:
-
-Description:
-A simple but effective task manager for all students.
-Easy to use but effective.
-
-Goals:
-To get a working product.
-Learn to work as a unit with github and trello.
-
-Unique Selling Points:
-Simplistic.
-User Friendly
-Self explanatory
