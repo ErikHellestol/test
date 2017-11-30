@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 var ejs = require('ejs');
 var pg = require('pg');
 var bodyParser = require('body-parser');
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
         client.connect();
 
 app.get('/',function(req,res,next){
-res.sendfile('views/index.html');
+res.sendfile('public/index.html');
 });
 
 app.post('/myaction', function(req, res) {
