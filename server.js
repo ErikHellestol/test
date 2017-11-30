@@ -29,5 +29,5 @@ client.query("Insert into accounts (username,password,name) VALUES ('"+req.body.
      throw err;
 });
 });
-app.listen(5432);
+app.listen(8080);
 console.log('Example app listening at port:3000');
