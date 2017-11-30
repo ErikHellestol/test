@@ -1,53 +1,33 @@
-
-//Parse data from JSON POST and insert into MYSQL
-
 var express = require('express');
 var app = express();
-var path = require('path');
+var ejs = require('ejs');
+var pg = require('pg');
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
+app.use(bodyParser.urlencoded({ extended: true })); 
 
-// Configure MySQL connection
-var connection = mysql.createConnection({
-	host: "ec2-46-137-174-67.eu-west-1.compute.amazonaws.com",
-    user: "ybyncykjxyctqo",
-    password: "02d96d972d10c154bf3524ee74dbefa3543ebec61049e3db4f7eae9114956db0",
-    database: "d34eo2gvf0u1tf"
-  })
 
-//Establish MySQL connection
-connection.connect(function(err) {
-   if (err) 
-      throw err
-   else {
-       console.log('Connected to MySQL');
-       // Start the app when connection is ready
-       app.listen(5432);
-       console.log('Server listening on port 5432');
- }
+        var conString = process.env.DATABASE_URL || "postgres://iekithysvinquu:c119bf011446076bd1a4432b08137b87f7fd85e33abdfb31e8b68bbe114f260d@ec2-184-73-206-155.compute-1.amazonaws.com:5432/da1curvb0ahodk";
+        var client = new pg.Client(conString);
+        client.connect();
+
+app.get('/',function(req,res,next){
+res.sendfile('views/index.html');
 });
 
-app.use(bodyParser.json())
+app.post('/myaction', function(req, res) {
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname+ '/myfile.html'));
-});
+console.log('req.body');
+console.log(req.body);
+res.write('You sent the name "' + req.body.username+'".\n');
+res.write('You sent the Email "' + req.body.password+'".\n');
+res.write('You sent the City "' + req.body.name+'".\n');
+res.end()
 
-app.post('/', function(req, res) {
-
-var jsondata = req.body;
-var values = [];
-
-for(var i=0; i< jsondata.length; i++)
-  values.push([jsondata[i].name,jsondata[i].age]);
-
-//Bulk insert using nested array [ [a,b],[c,d] ] will be flattened to (a,b),(c,d)
-connection.query('INSERT INTO accounts (username, password, name) VALUES ?', [values], function(err,result) {
-  if(err) {
-     res.send('Error');
-  }
- else {
-     res.send('Success');
-  }
+client.query("Insert into accounts (username,password,name) VALUES ('"+req.body.username+"','"+req.body.password+"','"+req.body.name+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
 });
 });
+app.listen(5432);
+console.log('Example app listening at port:3000');
