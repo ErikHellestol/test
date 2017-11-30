@@ -5,7 +5,11 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 
+app.use(express.static("./public"));
+app.listen(process.env.PORT || 8080, function () { // do something with the port
+console.log('Star wars');
 
+    
         var conString = process.env.DATABASE_URL || "postgres://iekithysvinquu:c119bf011446076bd1a4432b08137b87f7fd85e33abdfb31e8b68bbe114f260d@ec2-184-73-206-155.compute-1.amazonaws.com:5432/da1curvb0ahodk";
         var client = new pg.Client(conString);
         client.connect();
@@ -29,5 +33,3 @@ client.query("Insert into accounts (username,password,name) VALUES ('"+req.body.
      throw err;
 });
 });
-app.listen(8080);
-console.log('Example app listening at port:3000');
