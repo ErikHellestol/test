@@ -1,16 +1,20 @@
 {
-  "name": "node-authentication",
+  "name": "server",
+  "version": "1.0.0",
+  "description": "asd",
   "main": "server.js",
-  "dependencies" : {
-    "express" : "~3.4.4", 			
-    "ejs" : "~0.8.5", 				
-    "mongoose" : "~3.8.1", 			
-    "passport" : "~0.1.17", 		
-    "passport-local" : "~0.1.6", 	
-    "passport-facebook" : "~1.0.2", 
-    "passport-twitter" : "~1.0.2", 	
-    "passport-google-oauth" : "~0.1.5",
-    "connect-flash" : "~0.1.1", 	
-    "bcrypt-nodejs" : "latest" 		
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node_exercise_2"
+  },
+  "author": "Jørgen Bordal Andersen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
   }
 }
