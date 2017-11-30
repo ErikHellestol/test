@@ -9,11 +9,7 @@ var con = mysql.createConnection({
   database: "d34eo2gvf0u1tf"
 });
 
-var username = document.getElementById('username');
-var password = document.getElementById('password');
-var name = document.getElementById('name');
-var btn = document.getElementById('btn');
-var msg = document.getElementById('msg');
+
 
 btn.addEventListener("click", function() {
 	
