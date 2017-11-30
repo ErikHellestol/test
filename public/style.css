@@ -17,14 +17,17 @@
 
 }
 
-button {
-    width: 400px;
+#btn {
+	margin:auto;
+    width: 200px;
+	margin-top:10px;
     margin-bottom: 5px;
     height: 40px;
     font-size: 14pt;
     border-radius: 8px;
     color: white;
     background-color: #008CBA;
+	display:block;
 }
 
 
@@ -34,3 +37,22 @@ h1{
 }
 
 p { font-family: sans-serif;}
+
+a {
+	margin:auto;
+    width: 200px;
+	margin-top:10px;
+    margin-bottom: 5px;
+    height: 30px;
+    font-size: 12pt;
+    border-radius: 8px;
+    color: white;
+    background-color: #008CBA;
+	display:block;
+	font-family:sans-serif;
+	text-decoration:none;
+	padding-top:10px;
+	font-weight:500;
+}
+
+a:hover {text-decoration:underline;}
